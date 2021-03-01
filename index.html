@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.js"></script>
 </head>
 <body>
@@ -16,7 +17,24 @@
             <li>TV Shows</li>
             <li>Movies</li>
         </ul>
+        <select name="filmMode" id="filmMode">
+            <option value="movie">Movie</option>
+            <option value="tvshow">TV Show</option>
+        </select>
+        <div id="movies">
+        <h2>Search Movie</h2>
+        <form id="movieSearch">
+            <input type="text" id="movieInput" placeholder= "Search Movie" name="movieInput">
+            <button id="movieSubmit">Submit</button>
+        </form>
+        <ul id="displayMovies">
 
+        </ul>
+    </div>
+    
+
+    
+    <div id="tvShows" style="display: none;">
         <h1>Search TV Show</h1>
         <form id="searchForm">
             <input type="text" id="searchInput" placeholder= "Search TV Show" name="searchInput">
@@ -25,7 +43,7 @@
         <ul id="displaySearches">
 
         </ul>
-
+    </div>
     </nav>
     <script src="javascript/script.js"></script>
 </body>
