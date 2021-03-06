@@ -1,3 +1,78 @@
-h2 {
+* {
+    font-family: 'Nunito', sans-serif;
+}
 
+nav {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,136,255,1) 100%);
+}
+
+#logoSt {
+    color: #4169E1;
+}
+
+#logoNd {
+    color: #00BFFF;
+}
+
+.nav-link {
+    color: #fff;
+    transition: .2s ease-in;
+}
+
+.nav-link:hover {
+    color: #282694;
+    cursor: pointer;
+}
+
+#filmMode {
+    width: 115px;
+    height: 35px;
+    
+}
+
+#search {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchForm {
+    display: flex;
+}
+
+.searchContainer {
+  width: 260px;
+}
+
+.searchSubmit {
+    width: 260px;
+}
+
+.showTitle {
+    font-size: 20px;
+}
+
+.showPoster {
+    width: 300px;
+    height: 100%;
+}
+
+#displaySearches li {
+    list-style: none;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+#displaySearches li h4 {
+    max-width: 300px;
+    color: #fff;
+}
+
+#displaySearches li span {
+    color: rgb(187, 187, 187);
+}
+
+#displaySearches li .card-body {
+    max-width: 300px;
 }

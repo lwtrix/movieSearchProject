@@ -6,45 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.js"></script>
 </head>
-<body>
+<body class="bg-dark">
     
-    <nav id="mainNav">
-        <div>Movie Search</div>
-        <ul>
-            <li>TV Shows</li>
-            <li>Movies</li>
-        </ul>
-        <select name="filmMode" id="filmMode">
-            <option value="movie">Movie</option>
-            <option value="tvshow">TV Show</option>
-        </select>
-        <div id="movies">
-        <h2>Search Movie</h2>
-        <form id="movieSearch">
-            <input type="text" id="movieInput" placeholder= "Search Movie" name="movieInput">
-            <button id="movieSubmit">Submit</button>
-        </form>
-        <ul id="displayMovies">
-
-        </ul>
-    </div>
-    
-
-    
-    <div id="tvShows" style="display: none;">
-        <h1>Search TV Show</h1>
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder= "Search TV Show" name="searchInput">
-            <button id="searchSubmit">Submit</button>
-        </form>
-        <ul id="displaySearches">
-
-        </ul>
-    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span id="logoSt">FILM</span><span id="logoNd">OPEDIA</span></a>
+            <ul class="nav">
+                <li class="nav-link">TV Shows</li>
+                <li class="nav-link">Movies</li>
+            </ul>
+        </div>
     </nav>
+
+
+<section id="search" class="container text-white bg-dark pt-5">
+        <div id="movies" class="searchContainer">
+            <h2 class="text-primary">Search Movie</h2>
+            <form id="movieSearch" class="searchForm">
+                <input type="text" id="movieInput" class="searchInput mr-2" placeholder= "Search Movie" name="movieInput">
+                <button id="movieSubmit" class="searchSubmit btn btn-primary px-3 py-1">Submit</button>
+            </form>
+        </div>
+    
+
+    
+    <div id="tvShows" class="searchContainer" style="display: none;">
+        <h2 class="text-primary">Search TV Show</h2>
+        <form id="searchForm" class="searchForm">
+            <input type="text" id="searchInput" class="searchInput mr-2" placeholder= "Search TV Show" name="searchInput">
+            <button id="searchSubmit" class="searchSubmit btn btn-primary px-3 py-1">Submit</button>
+        </form>
+    </div>
+
+    <select name="filmMode" id="filmMode" class="btn btn-outline-primary mt-2">
+        <option value="movie">Movie</option>
+        <option value="tvshow">TV Show</option>
+    </select>
+</section>  
+
+<hr id="searchLine" class="bg-primary">
+
+    <div class="container" id="tvShowsDisplay">
+        <div id="displaySearches" class="container row justify-content-md-center mr-0"></div>
+    </div>
+
+
     <script src="javascript/script.js"></script>
 </body>
 </html>

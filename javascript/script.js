@@ -7,11 +7,9 @@ const movieSearch = document.querySelector("#movieSearch");
 const movies = document.querySelector("#movies");
 const movieInput = document.querySelector("#movieInput")
 const tvShows = document.querySelector("#tvShows");
-const movieList = document.querySelector("#displayMovies")
+const logo = document.querySelector("#logo")
 
 let data = [];
-
-
 
 showSearch.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -39,7 +37,7 @@ movieSearch.addEventListener("submit", async function (e) {
 });
 
 
-    filmMode.addEventListener("input", async function(e) {
+filmMode.addEventListener("input", async function(e) {
         
         if (this.value == "movie") {
             tvShows.style.display = "none";
@@ -52,7 +50,7 @@ movieSearch.addEventListener("submit", async function (e) {
             tvShows.style.display = "block";
             deleteItems(data);
         }
-    })
+})
    
 
 
@@ -68,63 +66,48 @@ const fetchShowsAPI = async (value) =>  {
     }
 
 }
-
-const createShow = (showTitle, showImg, showGenres, showSummary) => {
-    showTitle.innerText = item.show.name;
-    showImg.src = item.show.image.medium;
-    showGenres.innerText = item.show.genres;
-    showSummary.innerHTML = item.show.summary;
-}
-
 const displayShow = (arrItems) => {
     if (data.length !== 0) {
-        for (item of arrItems) {
-            if(item.show.image) {
-                const newItem = document.createElement("li");
-                const title = document.createElement("h2");
-                const img = document.createElement("img");
-                const genres = document.createElement("span");
-                const summary = document.createElement("p");
-
-                createShow(title, img, genres, summary);
-                newItem.append(title, img, genres, summary);
-                displaySearches.append(newItem);
+        for (show of arrItems) {
+            if(show.show.image) {;
+                displaySearches.innerHTML += 
+                `<li class="col-md-6 col-lg-3 mb-5 mr-0">
+                        <h4 class="showTitle mb-2">${show.show.name}</h4>
+                        <img class="showPoster img-fluid" src=${show.show.image.medium}></img>
+                        <a href="${show.show.url}" class="btn btn-outline-light ml-2 mt-2">View website</a>
+                </li>`
             }
         }
     } else {
         console.log("NO MATCHES FOUND!");
     }
-}
-
-const createMovie = (movieTitle, movieImg, movieYear) => {
-    movieTitle.innerText = item.Title;
-    movieImg.src = item.Poster;
-    movieYear.innerText = item.Year;
 }
 
 const displayMovie = (arrItems) => {
     if (data.length !== 0) {
-        for (item of arrItems) {
-            if(item.Poster != "N/A" && item.Type == "movie") {
-                const newItem = document.createElement("li");
-                const title = document.createElement("h2");
-                const img = document.createElement("img");
-                const year = document.createElement("span");
-
-                createMovie(title, img, year);
-                newItem.append(title, img, year);
-                movieList.append(newItem);
+        for (movie of arrItems) {
+            if(movie.Poster != "N/A" && movie.Type == "movie") {;
+                displaySearches.innerHTML += 
+                `<li class="col-md-6 col-lg-3 mb-5 mr-0">
+                    <h4 class="showTitle mb-2">${movie.Title}</h4>
+                    <img class="showPoster img-fluid" src=${movie.Poster}></img>
+                <div class="card-body">
+                    <span class="showGenre card-subtitle">${movie.Year}</span>
+                </div>
+                </li>`
             }
         }
     } else {
-        console.log("NO MATCHES FOUND!");
+    console.log("NO MATCHES FOUND!");
     }
 }
 
+
 const deleteItems = (arrItems) => {
-    for (let i = 0; i < arrItems.length; i++) {
-        arrItems.splice([i]);
+    if (arrItems.length >= 1 ) {
+        for (let i = 0; i < arrItems.length; i++) {
+            arrItems.splice([i]);
+        }
+        displaySearches.innerHTML = "";
     }
-    displaySearches.innerHTML = "";
-    movieList.innerHTML = "";
 }
