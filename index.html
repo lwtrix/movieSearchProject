@@ -10,12 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 </head>
 <body class="bg-dark">
     
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><span id="logoSt">FILM</span><span id="logoNd">OPEDIA</span></a>
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons">
+                live_tv
+                </span>
+                <span id="logoSt">FILM</span><span id="logoNd">OPEDIA</span></a>
             <ul class="nav">
                 <li class="nav-link">TV Shows</li>
                 <li class="nav-link">Movies</li>
@@ -25,15 +30,17 @@
 
 
 <section id="search" class="container text-white bg-dark pt-5">
-        <div id="movies" class="searchContainer">
-            <h2 class="text-primary">Search Movie</h2>
-            <form id="movieSearch" class="searchForm">
-                <input type="text" id="movieInput" class="searchInput mr-2" placeholder= "Search Movie" name="movieInput">
-                <button id="movieSubmit" class="searchSubmit btn btn-primary px-3 py-1">Submit</button>
-            </form>
-        </div>
+
     
 
+
+    <div id="movies" class="searchContainer">
+        <h2 class="text-primary">Search Movie</h2>
+        <form id="movieSearch" class="searchForm">
+            <input type="text" id="movieInput" class="searchInput mr-2" placeholder= "Search Movie" name="movieInput">
+            <button id="movieSubmit" class="searchSubmit btn btn-primary px-3 py-1">Submit</button>
+        </form>
+    </div>
     
     <div id="tvShows" class="searchContainer" style="display: none;">
         <h2 class="text-primary">Search TV Show</h2>
@@ -51,9 +58,15 @@
 
 <hr id="searchLine" class="bg-primary">
 
-    <div class="container" id="tvShowsDisplay">
-        <div id="displaySearches" class="container row justify-content-md-center mr-0"></div>
+<div class="container" id="tvShowsDisplay">
+    <div id="displaySearches" class="container row justify-content-md-center mr-0"></div>
+</div>
+
+<div class="container">
+    <div id="displayDetails" class="container row justify-content-md-center mr-0">
+
     </div>
+</div>
 
 
     <script src="javascript/script.js"></script>

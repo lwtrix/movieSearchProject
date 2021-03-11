@@ -7,6 +7,11 @@ nav {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,136,255,1) 100%);
 }
 
+.navbar .material-icons {
+    transform: translateY(3px);
+    color: #4169E1;
+}
+
 #logoSt {
     color: #4169E1;
 }
@@ -28,12 +33,12 @@ nav {
 #filmMode {
     width: 115px;
     height: 35px;
-    
 }
 
 #search {
     display: flex;
     flex-direction: column;
+    padding-left: 32px;
 }
 
 .searchForm {
@@ -57,10 +62,14 @@ nav {
     height: 100%;
 }
 
+input .form-control {
+    width: 300px;
+}
+
 #displaySearches li {
     list-style: none;
     padding: 20px;
-    width: 100%;
+    max-width: 330px;
     align-items: center;
 }
 
@@ -69,10 +78,69 @@ nav {
     color: #fff;
 }
 
-#displaySearches li span {
+#displaySearches li a {
+    width: 130px;
+    display: block;
+}
+
+#displaySearches li div a {
+    width: 130px;
+}
+
+#displaySearches li .row span {
     color: rgb(187, 187, 187);
+    text-align: right;
+    padding: 5px;
+    display: block;
 }
 
 #displaySearches li .card-body {
     max-width: 300px;
 }
+
+#movieDetailsContainer {
+    color: white;
+    width: 700px;
+}
+
+#movieDetailsContainer .backTo {
+    line-height: 3;
+}
+
+#movieDetailsContainer h4 {
+    max-width: 350px;
+}
+
+#movieDetailsContainer h4 span {
+   width: 60px;
+   height: 20px;
+   font-size: 13px;
+   transform: translateY(-3px);
+}
+
+#movieDetails ul li {
+   padding: 0;
+   line-height: 1.9rem;
+   list-style: none;
+}
+
+#movieDetails ul li span {
+    color: rgb(187, 187, 187);
+    display: inline-block;
+    padding: 0;
+}
+
+#movieDetails span {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.moviePlot {
+    border-top: 2px solid black;
+}
+
+#movieDetailsContainer .material-icons {
+    transform: translateY(5px);
+    font-size: 20px;
+}
+
