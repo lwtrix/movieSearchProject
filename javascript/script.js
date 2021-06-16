@@ -11,6 +11,7 @@ const tvShows = document.querySelector("#tvShows");
 const logo = document.querySelector("#logo")
 const search = document.querySelector("#search");
 const hr = document.querySelector("hr");
+const status = document.querySelector("#status");
 const displayDetails = document.querySelector("#displayDetails");
 
 let data = [];
@@ -19,12 +20,18 @@ showSearch.addEventListener("submit", async function (e) {
         e.preventDefault();
         const searchValue = showSearch.elements.searchInput.value;
         
-        deleteItems(data);
-        data = await fetchShowsAPI(searchValue);
-        displayShow(data);
-        searchInput.value = "";
+        if(searchValue.length <= 1) {
+            status.style.display = "block";
+        } else {
+            status.style.display = "none"
 
-        console.dir(data);
+            deleteItems(data);
+            data = await fetchShowsAPI(searchValue);
+            displayShow(data);
+            searchInput.value = "";
+    
+            console.dir(data);
+        }
 });
 
 
@@ -32,12 +39,20 @@ movieSearch.addEventListener("submit", async function (e) {
         e.preventDefault();
         const searchValue = movieSearch.elements.movieInput.value;
 
-        deleteItems(data);
-        data = await fetchShowsAPI(searchValue);
-        displayMovie(data);
-        movieInput.value = "";
+        if(searchValue.length <= 1) {
+            status.style.display = "block";
+        } else {
+            status.style.display = "none"
+            
+            deleteItems(data);
+            data = await fetchShowsAPI(searchValue);
+            displayMovie(data);
+            movieInput.value = "";
+    
+            console.dir(data);
+        }
 
-        console.dir(data);
+        
 });
 
 

@@ -66,6 +66,13 @@ input .form-control {
     width: 300px;
 }
 
+#status {
+    color: white;
+    padding: 5px;
+    width: 210px;
+    margin-left: 20px;
+}
+
 #displaySearches li {
     list-style: none;
     padding: 20px;
