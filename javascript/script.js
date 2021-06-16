@@ -77,10 +77,10 @@ filmMode.addEventListener("input", async function(e) {
 const fetchShowsAPI = async (value) =>  {
     if(filmMode.value == "movie") {
         const config = {params: {apikey : "37697e59", r: "json", s: value}};
-        const res = await axios.get("http://www.omdbapi.com/", config);
+        const res = await axios.get("https://www.omdbapi.com/", config);
         return res.data.Search;
     } else if (filmMode.value == "tvshow") {
-        const res = await axios.get(`http://api.tvmaze.com/search/shows/?q=${value}`);
+        const res = await axios.get(`https://api.tvmaze.com/search/shows/?q=${value}`);
         return res.data;
     }
 
@@ -124,7 +124,7 @@ const displayMovie = (arrItems) => {
 
 const getMovieDetails = async (imdb) => {
     const config = {params: {apikey : "37697e59", r: "json", i: imdb}};
-    const res = await axios.get("http://www.omdbapi.com/", config);
+    const res = await axios.get("https://www.omdbapi.com/", config);
     
     console.log(res.data)
 
